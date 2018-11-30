@@ -26,7 +26,7 @@ SECRET_KEY = 'a#^xkjmj4so*-x=3i@zy--!8%on)@czb*_c)e=95r9!zv0l*()'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bauchi-job.herokuapp.com']
+ALLOWED_HOSTS = ['bauchi-job.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

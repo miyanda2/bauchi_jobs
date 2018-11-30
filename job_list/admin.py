@@ -4,7 +4,7 @@ from .models import JobListing
 
 # Register your models here.
 class JobListingAdmin(admin.ModelAdmin):
-	list_display = ['title', 'description', 'company_name', 'image']
+	list_display = ['title', 'description', 'company_name', ]
 
 	#fields = ( 'image_tag','title','description','image','externalURL', )
     
