@@ -1,6 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+
+
+
+
+
+
 class Quiz(models.Model):
     date_created = models.DateTimeField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
