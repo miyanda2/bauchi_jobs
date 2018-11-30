@@ -9,6 +9,8 @@ class RegisterForm(UserCreationForm):
 	last_name = forms.CharField(max_length=30, required=True, help_text='Required.')
 	email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
 	school = forms.CharField(max_length=30, required=True, help_text='Required.')
+	Phone_num = forms.IntegerField(required=True, help_text='Required.')
+	CV = forms.FileField()
 
 
 
@@ -17,7 +19,8 @@ class RegisterForm(UserCreationForm):
 		fields = [  'username',
 					'first_name',
 					'last_name',
-					'school'
+					'Phone_num',
+					'school',
 					
 	                    
 	            ]

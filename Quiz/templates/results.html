@@ -13,7 +13,7 @@
    <tbody>
    	{% for score in scores %}
    	   	<tr>
-	   		<td>{{ score.user.first_name }}</td>
+	   		<td>{{ score.user.first_name }} {{ score.user.last_name }}</td>
 	   		<td>{{  score.taken_on }}</td>
 	   		<td>{{ score.score }} / {{ score.quiz.no_of_ques }}</td>
    		</tr>
