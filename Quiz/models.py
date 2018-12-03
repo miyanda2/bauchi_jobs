@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
+from .forms import RegisterForm
 
 
 from django.urls import reverse
@@ -19,7 +19,7 @@ class User1(models.Model):
 
 class Profile(models.Model):
     name = models.CharField(max_length = 50, default='DEFAULT VALUE')
-    CV = models.FileField(upload_to = 'cv')
+    CV = models.FileField(upload_to='cv', default='DEFAULT VALUE')
     class Meta:
         db_table = "cv"
 

@@ -22,7 +22,7 @@ def SaveProfile(request):
         MyRegisterForm = RegisterForm(request.POST, request.FILES)
         if MyRegisterForm.is_valid():
             profile = Profile()
-            profile.name = MyRegisterForm.cleaned_data["name"]
+            profile.name = MyRegisterForm.cleaned_data["username"]
             profile.CV = MyRegisterForm.cleaned_data["cv"]
             profile.save()
             saved = True
