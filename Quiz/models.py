@@ -17,7 +17,11 @@ class User1(models.Model):
     def get_absolute_url(self):
         return reverse('uploadfileapp:home')
 
-
+class Profile(models.Model):
+    name = models.CharField(max_length = 50, default='DEFAULT VALUE')
+    CV = models.FileField(upload_to = 'cv')
+    class Meta:
+        db_table = "cv"
 
 class Quiz(models.Model):
     date_created = models.DateTimeField()
