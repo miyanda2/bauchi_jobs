@@ -181,3 +181,6 @@ def delete_quiz_view(request, quiz_id):
 def signout_view(request):
     logout(request)
     return redirect('home')
+
+
+
