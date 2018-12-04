@@ -15,8 +15,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_ROOT = os.path.join(BASE_DIR, 'CV')
-MEDIA_URL = "/CV/"
 
 
 # Quick-start development settings - unsuitable for production
@@ -133,16 +131,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+MEDIA_ROOT = 'MYKE\media_cdn/'
+MEDIA_URL = '/media/'
 
-DROPBOX_APP_KEY = "5fi1azxomkvsndu"
-DROPBOX_APP_SECRET_KEY = "ed9odifp1ebs7k3"
-DROPBOX_APP_ACCESS_TOKEN = "FnLSRTm00VsAAAAAAAALwERE8L5NYyb99l51kzqMZMt26EpTphQFh-cOB7IiTVhg"
-DROPBOX_APP_ACCESS_TOKEN_SECRET = ""
-
-# Optional values below
-
-# The folder where you want the files uploaded.
-# Example: /Public or /
-DROPBOX_FILE_UPLOAD_FOLDER = "Bauchi_job"
-# The value below may be either 'app_folder' or 'dropbox'
-DROPBOX_ACCESS_TYPE = "app_folder"
