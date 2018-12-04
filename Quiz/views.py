@@ -10,26 +10,12 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 
-from .forms import RegisterForm
-from .models import Profile
 
 
 
 
-def SaveProfile(request):
-    saved = False
-    if request.method == "POST":
-        MyRegisterForm = RegisterForm(request.POST, request.FILES)
-        if MyRegisterForm.is_valid():
-            profile = Profile()
-            profile.name = MyRegisterForm.cleaned_data["username"]
-            profile.CV = MyRegisterForm.cleaned_data["cv"]
-            profile.save()
-            saved = True
-    else:
-        MyRegisterForm = RegisterForm()
-		
-    return render(request, '', locals())
+
+
 
 
 
@@ -195,6 +181,3 @@ def delete_quiz_view(request, quiz_id):
 def signout_view(request):
     logout(request)
     return redirect('home')
-
-
-

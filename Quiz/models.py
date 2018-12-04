@@ -1,27 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from .forms import RegisterForm
 
 
-from django.urls import reverse
- 
- 
-class User1(models.Model):
- 
-    #the variable to take the inputs
-    user_name = models.CharField(max_length=100)
-    user_avatar = models.FileField()
- 
-    # on submit click on the user entry page, it redirects to the url below.
-    def get_absolute_url(self):
-        return reverse('uploadfileapp:home')
 
-class Profile(models.Model):
-    name = models.CharField(max_length = 50, default='DEFAULT VALUE')
-    CV = models.FileField(upload_to='cv', default='DEFAULT VALUE')
-    class Meta:
-        db_table = "cv"
+
+
+
 
 class Quiz(models.Model):
     date_created = models.DateTimeField()

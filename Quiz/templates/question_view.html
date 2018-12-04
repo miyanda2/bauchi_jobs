@@ -1,19 +1,6 @@
 {% extends 'base.html' %}
 
-
-
-
 {% block content %}
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  p {
-    text-align: center;
-    font-size: 60px;
-    margin-top: 0px;
-  }
-
-</style>
-
 {% if messages %}
 {% for message in messages %}
 <div class="alert alert-{{ message.tags }}">{{ message }}</div>
@@ -25,7 +12,7 @@
 <h1 style="text-align: center"><span class="badge badge-pill badge-secondary">{{ quiz.quiz_name }}</span></h1>
 <hr>
   <h2>{{ques.question_text }}</h2><br>
-  <form method="POST" name="_skip" id="modal"> {% csrf_token %}
+  <form method="POST"> {% csrf_token %}
     {% for choice in ques.choice_set.all %}
     <h5><input type="radio" name="choices" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
     <label class="form-check-label" for="choice{{ forloop.counter }}">
@@ -33,34 +20,6 @@
     </label></h5>
     {% endfor %}<br>
     <button type="submit" class="btn btn-success">Submit</button>
-    <button style="float:right;" id = "skip" type="submit" name="_skip" action = "" class="btn btn-success">Skip</button>
+    <button style="float:right;" type="submit" name="_skip" class="btn btn-success">Skip</button>
   </form>
-
-
-
-<div style = "font-weight: bold" id="quiz-time-left"></div>
-<script type="text/javascript">
-  var total_seconds = 60*0.2;
-  var c_minutes = parseInt(total_seconds/60);
-  var c_seconds = parseInt(total_seconds%60);
-  function CheckTime(){
-    document.getElementById("quiz-time-left").innerHTML
-  
-    ='Time Left: '  + c_minutes + ' minutes ' + c_seconds + ' seconds' ;
-    if(total_seconds <=0){
-      
-        document.getElementById('skip').click();
-      
-    }else{
-      total_seconds = total_seconds -1;
-      c_minutes = parseInt(total_seconds/60);
-      c_seconds = parseInt(total_seconds%60);
-    setTimeout("CheckTime()",1000);
-
-    }
-   }
-   setTimeout("CheckTime()",1000);
-   </script>
-
-  
-  {% endblock %}
+{% endblock %}
