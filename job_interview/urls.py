@@ -14,11 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path, re_path
+from django.urls import include, path
+#from . import views
 from job_list.views import home, signup
 from Quiz import views
-from django.conf import settings
-from django.views.static import serve
 
 
 urlpatterns = [
@@ -29,12 +28,3 @@ urlpatterns = [
     path('quiz', include('Quiz.urls')),
     path('register/', views.register_view, name="register"),
 ]
-
-
-
-if settings.DEBUG:
-    urlpatterns += [
-        re_path(r'^CV/(?P<path>.*)$', serve, {
-                'document_root': settings.MEDIA_ROOT,
-        }),
-           ]
