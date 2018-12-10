@@ -10,7 +10,6 @@ from django.conf import settings
 class JobListing(Model):
 	title = TextField(null=True, blank = True)
 	company_name = TextField(null=True, blank = True)
-	image = ImageField(upload_to=settings.MEDIA_ROOT, blank=True)
 	description = TextField(null=True, blank = True)
 
 

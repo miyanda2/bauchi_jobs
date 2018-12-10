@@ -124,13 +124,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-#LOGIN_REDIRECT_URL = 'application-form.html'
+LOGIN_REDIRECT_URL = 'index.html'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-MEDIA_ROOT = 'cv/media_cdn/'
+MEDIA_ROOT = 'cv/'
 MEDIA_URL = '/cv/'
 

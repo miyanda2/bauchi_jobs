@@ -17,15 +17,14 @@ from .models import Profile
 
 
 def SaveProfile(request):
-    saved = False
+
     if request.method == "POST":
         MyRegisterForm = RegisterForm(request.POST, request.FILES)
         if MyRegisterForm.is_valid():
-            profile = Profile()
-            profile.name = MyRegisterForm.cleaned_data["name"]
-            profile.cv = MyRegisterForm.cleaned_data["cv"]
-            profile.save()
-            saved = True
+            newcv = Profile(cv = request.FILES['cv'])
+            
+            newcv.save()
+            
     else:
         MyRegisterForm = RegisterForm()
         

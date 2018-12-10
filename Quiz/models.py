@@ -19,7 +19,7 @@ class User1(models.Model):
 
 class Profile(models.Model):
     name = models.CharField(max_length = 50, default='DEFAULT VALUE')
-    cv = models.FileField(upload_to='cv')
+    cv = models.FileField(upload_to='cv /%Y/%m/%d')
     class Meta:
         db_table = "cv"
 

@@ -93,12 +93,12 @@
     <section class="jobs-section">
       <div class="container">
         <div class="row">
-          <div class="card-columns px-sm-0 px-3">
+          <div class="card-columns px-sm-0 px-3 ">
 
             <!-- /////////////////////////////////////////////////////////////// -->
             <!-- Your Loop starts here -->
             {% for listing in job_listings %}
-            <div class="card wow fadeInUp fast">
+            <div class="card wow fadeInUp fast ">
               <div class="view overlay">
                 
                 <a href="#!">
@@ -106,8 +106,10 @@
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title"><a href="{% url 'register' %}" class="tick-blue-text">{{listing.title}}</a></h5>
-                <p class="card-text">{{listing.description}}</p>
+                <h5 class="card-header"><a href="{% url 'register' %}" class="tick-blue-text">{{listing.title}}</a></h5>
+                  <div class="card-body">
+                    <p class="card-text">{{listing.description}}</p>
+                  </div>
               </div>
               <div class="card-footer bg-transparent">
                 <p class="card-text"><small class="">Company : {{listing.company_name}}</small></p>
