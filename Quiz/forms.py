@@ -9,7 +9,7 @@ from .models import *
 
 class RegisterForm(UserCreationForm):
 	
-	cv = forms.FileField(required=False, label='Select a file', help_text='max. 42 megabytes')
+	file = forms.FileField(required=False, label='Select a file', help_text='max. 42 megabytes')
 
 	class Meta:
 		model = User
