@@ -57,7 +57,9 @@
           {% if request.user.is_superuser %}
           <td class="align-middle">{{ quiz.taken_by }}</td>
           {% endif %}
+          {% if request.user.is_staff %}
           <td class="align-middle"><a href="{% url 'question' quiz.id 1 %}"><button class="btn btn-success">Take Quiz</button></a></td>
+          {% endif %}
         </tr>
         {% endfor %}
       </tbody>

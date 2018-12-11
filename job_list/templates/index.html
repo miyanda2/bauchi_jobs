@@ -88,26 +88,36 @@
   <!-- Header section -->
 
   <main>
-    
 
+
+             
+          <center>
+            <h3>
+              Jobs
+              <small class="text-muted">With with description and company</small>
+            </h3>
+          </center>
+          
     <section class="jobs-section">
       <div class="container">
         <div class="row">
-          <div class="card-columns px-sm-0 px-3">
+          <div class="card-columns px-sm-0 px-3 ">
 
             <!-- /////////////////////////////////////////////////////////////// -->
             <!-- Your Loop starts here -->
             {% for listing in job_listings %}
-            <div class="card wow fadeInUp fast">
+            <div class="card wow fadeInUp fast ">
               <div class="view overlay">
-                {{listing.image}}
+                
                 <a href="#!">
                   <div class="mask rgba-indigo-light"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title"><a href="{% url 'register' %}" class="tick-blue-text">{{listing.title}}</a></h5>
-                <p class="card-text">{{listing.description}}</p>
+                <h5 class="card-header"><a href="{% url 'register' %}" class="tick-blue-text">{{listing.title}}</a></h5>
+                  <div class="card-body">
+                    <p class="card-text">{{listing.description}}</p>
+                  </div>
               </div>
               <div class="card-footer bg-transparent">
                 <p class="card-text"><small class="">Company : {{listing.company_name}}</small></p>
@@ -116,16 +126,7 @@
             {% endfor %}
           </div>
         </div>
-        <div class="row py-5 mx-auto">
-          <div class="col-md-11">
-            <div class = "post_body">
-            <a 
-
-            class="btn btn-block default-bg-color py-3 wow fadeInUp slow" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                read more</a>
-                </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   </main>
