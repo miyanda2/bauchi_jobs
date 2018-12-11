@@ -1,6 +1,7 @@
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import path, re_path
+from django.conf import settings
+from django.views.static import serve
 from Quiz import views
 
 urlpatterns = [
@@ -14,3 +15,9 @@ urlpatterns = [
     path('delete/<int:quiz_id>', views.delete_quiz_view, name="delete_quiz"),
     path('logout', views.signout_view, name="signout"),
 ]
+if settings.DEBUG:
+    urlpatterns += [
+        re_path(r'^cv/(?P<path>.*)$', serve, {
+                'document_root': settings.MEDIA_ROOT,
+        }),
+           ]

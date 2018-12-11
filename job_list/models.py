@@ -26,6 +26,6 @@ class JobListing(Model):
 		return mark_safe('<img src="{}" width="150" height="150" />'.format(self.url()) )
 		image_tag.short_description = 'Image'    
 
-	def __unicode__(self):
+	def __str__(self):
         # add __str__() if using Python 3.x
 		return self.title
